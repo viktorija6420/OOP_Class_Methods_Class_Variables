@@ -6,7 +6,7 @@ class Zombie
 
   @@max_speed = 5   #indicates the maximum value for the speed attribute of any
   # zombie.
-  @@max_strength = 8 #and indicates the maximum value for the strenth attribute
+  @@max_strength = 8 #indicates the maximum value for the strenth attribute
   # of any zombie.
 
   @@default_speed = 1
@@ -40,7 +40,7 @@ class Zombie
 
   end
 
-#Should it be a setter or a writer or both?
+
 #encounter
 # This instance method represents you coming across a zombie! This can end in
 #three possible outcomes: 1. escaping unscathed 2. being killed by the zombie 3.
@@ -107,7 +107,7 @@ class Zombie
   def self.new_day
     some_die_off
     spawn
-    increase_plague_level  #should they be with @ at all?
+    increase_plague_level
   end
 
   #some_die_off

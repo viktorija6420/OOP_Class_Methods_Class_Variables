@@ -1,8 +1,14 @@
+
+
+ # ********NEED TO REDO*******NOT WORKING PROPERLY*****
+
+
 # Create a class called Book.
 # Your class should have two class variables: @@on_shelf and @@on_loan.
 #Both should start as empty arrays. @@on_shelf will contain the collection
 #of book objects that are available to be lent out and @@on_loan will contain
 #the collection of books that are currently being borrowed.
+require 'time'
 class Book
   @@on_shelf = []
   @@on_loan = []
@@ -83,7 +89,7 @@ end
 
   def self.create(title, author, isbn)
     new_book_1 = Book.new(title, author, isbn)
-    @create = new_book_1 + @@on_shelf
+    @@on_shelf << new_book_1
     return new_book_1
   end
 # This class method should return the due date for books taken out today. It's up
@@ -100,7 +106,7 @@ end
       past_books = []
       @@on_loan.each do |loan|
         if loan.due_date < Time.now
-            past_books << value
+            past_books << loan
         end
       end
       return past_books
@@ -125,4 +131,6 @@ end
 
 end
 
-#Need to go back.Not working properly.
+new_book = Book.create("Some Name", "Whatever Name", "7869757")
+new_book_hello = Book.create ("Name Name", "Name2 Name2", "666464")
+puts Book.browse.inspect
